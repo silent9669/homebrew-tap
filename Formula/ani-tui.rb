@@ -6,11 +6,11 @@ class AniTui < Formula
   license "GPL-3.0-or-later"
   head "https://github.com/silent9669/ani-tui.git", branch: "master"
 
-  depends_on :macos
   depends_on "bash"
   depends_on "curl"
   depends_on "fzf"
   depends_on "jq"
+  depends_on :macos
   depends_on "chafa" => :recommended
   depends_on "mpv" => :recommended
 
