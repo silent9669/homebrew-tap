@@ -2,10 +2,12 @@ class AniTui < Formula
   desc "Anime TUI with image previews and terminal streaming"
   homepage "https://github.com/silent9669/ani-tui"
   url "https://github.com/silent9669/ani-tui/archive/refs/tags/v2.0.0.tar.gz"
-  version "2.0.0"
-  sha256 "d5558cd419c8d46bdc958064cb97f963d1ea793866414c025906ec15033512ed"
+  sha256 "d900d34b699d91f4449d16f6a23e1c1f8a824467490156acab82ae2b1a51cd8c"
   license "GPL-3.0-or-later"
   head "https://github.com/silent9669/ani-tui.git", branch: "master"
+
+  # macOS only (requires bash, fzf, chafa which work best on macOS)
+  depends_on :macos
 
   depends_on "bash"
   depends_on "curl"
