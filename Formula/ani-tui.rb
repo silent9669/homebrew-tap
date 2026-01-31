@@ -1,33 +1,20 @@
 class AniTui < Formula
-  desc "Anime TUI with image previews and terminal streaming"
+  desc "A Netflix-inspired TUI for anime streaming"
   homepage "https://github.com/silent9669/ani-tui"
-  url "https://github.com/silent9669/ani-tui/archive/refs/tags/v2.0.1.tar.gz"
-  sha256 "ea2caf1efd4f5c9c3cb388fb68d53aae28048ccc9e9dc9c9c2c8166f300cea68"
-  license "GPL-3.0-or-later"
-  head "https://github.com/silent9669/ani-tui.git", branch: "master"
+  url "https://github.com/silent9669/ani-tui/archive/refs/tags/v3.0.0.tar.gz"
+  sha256 "7bb23bad293e0cbc019c33051140cc7c5d8575243644b8e3c8dad8deebf34bc0"
+  license "MIT"
+  head "https://github.com/silent9669/ani-tui.git", branch: "main"
 
-  depends_on "bash"
-  depends_on "curl"
-  depends_on "fzf"
-  depends_on "jq"
-  depends_on :macos
-  depends_on "chafa" => :recommended
-  depends_on "mpv" => :recommended
+  depends_on "rust" => :build
+  depends_on "chafa"
+  depends_on "mpv"
 
   def install
-    bin.install "macos/ani-tui" => "ani-tui"
-    libexec.install "ani-tui/ani-cli"
-  end
-
-  def caveats
-    <<~EOS
-      For image previews: brew install chafa
-      For video playback: brew install mpv
-      Usage: ani-tui
-    EOS
+    system "cargo", "install", *std_cargo_args
   end
 
   test do
-    assert_match "ani-tui", shell_output("#{bin}/ani-tui --version")
+    system "#{bin}/ani-tui", "--version"
   end
 end
