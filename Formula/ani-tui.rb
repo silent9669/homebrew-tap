@@ -2,12 +2,12 @@ class AniTui < Formula
   desc "TUI for anime streaming"
   homepage "https://github.com/silent9669/ani-tui"
   url "https://github.com/silent9669/ani-tui/archive/refs/tags/v3.7.4.tar.gz"
-  sha256 "b55dd0561b40c38c711adafa78302270e243984876a2198f352c3defe893f102"
+  sha256 "1b6815a6a7947e30606ccd4a64724ea3c3990cf03d9fb9cfaa2403225e3361ab"
   license "MIT"
   head "https://github.com/silent9669/ani-tui.git", branch: "main"
 
-  depends_on "rust" => :build
   depends_on "pkgconf" => :build
+  depends_on "rust" => :build
   depends_on "chafa"
   depends_on "mpv"
 
