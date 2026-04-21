@@ -3,7 +3,7 @@ class AniTui < Formula
   homepage "https://github.com/silent9669/ani-tui"
   url "https://github.com/silent9669/ani-tui/archive/refs/tags/v3.8.0.tar.gz"
   version "3.8.0"
-  sha256 "44ec7077dfee2ae18fedff1e4f20cafe3e8ab8f40db10d452f2c472842603582"
+  sha256 "02d34ae348fb678b2acf07a89c1ed98bf299502ce3a6711293dca19746f73948"
   license "MIT"
   head "https://github.com/silent9669/ani-tui.git", branch: "main"
 
